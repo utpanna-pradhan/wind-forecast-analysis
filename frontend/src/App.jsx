@@ -29,8 +29,9 @@ import {
 
 import "./App.css";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+const API_URL = (
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
+).replace(/\/+$/, "");
 
 function formatNumber(value, digits = 0) {
   if (value === null || value === undefined || !Number.isFinite(value)) {
@@ -83,8 +84,8 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch(
-        `${API_URL}/api/analysis?decision_date=${date}&cutoff_time=10:00:00`
+     const response = await fetch(
+    `${API_URL}/api/analysis?decision_date=${date}&cutoff_time=10:00:00`
       );
 
       if (!response.ok) {
