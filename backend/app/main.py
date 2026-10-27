@@ -14,6 +14,7 @@ app = FastAPI(
 )
 
 # Local React development server.
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -22,9 +23,10 @@ app.add_middleware(
         "https://wind-forecast-analysis-wine.vercel.app",
     ],
     allow_credentials=False,
-    allow_methods=["GET"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.get("/")
 def home():
