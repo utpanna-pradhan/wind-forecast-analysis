@@ -20,7 +20,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://wind-forecast-analysis-wine.vercel.app",
+       "https://wind-forecast-analysis-wine.vercel.app"
     ],
     allow_credentials=False,
     allow_methods=["*"],
